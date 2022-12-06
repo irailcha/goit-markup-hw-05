@@ -118,6 +118,7 @@ img {
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
+    
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: var(--transition-timing-function);
@@ -130,6 +131,7 @@ img {
 
 .site-nav {
     display: flex;
+
     margin-left: 93px;
     align-items: center;
    
@@ -150,6 +152,7 @@ img {
 
 .link::after{
     position: absolute;
+
     content: '';
     width: 100%;
     height: 4px;
@@ -159,17 +162,17 @@ img {
     bottom: 0;
 
     opacity: 0;
-    
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: var(--transition-timing-function);
 }
+
 .link:hover::after{
     opacity: 1;
 }
 .link:focus::after{
     opacity: 1;
-}
+    }
 
 
 
@@ -186,6 +189,7 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     align-items: center;
+
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: var(--transition-timing-function);
@@ -330,6 +334,7 @@ ul.features {
 <li class="feature-list">*/
 .feature-list::before{
     display: block;
+
     margin-bottom: 30px;
     content: '';
     height: 120px;
@@ -388,6 +393,7 @@ ul.features {
 .label-box{
     display: block;
     position: absolute;
+
     bottom: 0;
     width: 100%;
     height: 70px;
@@ -415,6 +421,7 @@ ul.features {
     padding: 0;
     margin: 0;
     display: flex;
+
     margin-left: calc(-1 *var(--card-set-gap));
     margin-top: calc(-1 *var(--card-set-gap));
 }
@@ -466,8 +473,10 @@ ul.features {
 /*-------------*/
 
 .social-links{
-    margin-bottom: 30px;
     display: flex;
+
+    margin-bottom: 30px;
+    
     justify-content: center;
 }
 .link-team{
@@ -515,6 +524,7 @@ ul.features {
 }
 .link-clients{
     display: block;
+
     padding: 16px 32px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
@@ -703,9 +713,9 @@ ul.features {
 
 /*H1 */
 
-.visually-hidden {
+.visually-hidden {position: absolute;
+
     color: rgba(0, 0, 0, 0);
-    position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -768,6 +778,7 @@ ul.features {
 
 .list-project {
     display: flex;
+
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
@@ -842,15 +853,15 @@ ul.features {
 .project-overlay::before{
     display: inline-block;
     position: absolute;
+
     content:'';
     width: 100%;
     height: 100%;
     background-color: rgba(33, 150, 243, 0);
 
-    transition: transform 250ms var(--transition-timing-function);
+    transition: transform 250ms var(--transition-timing-function), opacity 250ms var(--transition-timing-function);
 
     transform: translateY(100%);
-    opacity: 0;
 
     
 }
@@ -861,7 +872,6 @@ ul.features {
 
 .flex-element:hover .project-overlay::before {
     transform: translateY(0);
-   
 }
 
 
@@ -871,13 +881,14 @@ ul.features {
 
 .backdrop{
     position: fixed;
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 
-    opacity:1;
+    opacity: 1;
     transition: opacity 250ms var(--transition-timing-function);
     
 }
@@ -885,11 +896,11 @@ ul.features {
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-
 }
 
 .modal{
-    position: absolute;
+    position: absolute; 
+
     width: 528px;
     height: 581px;
     
@@ -897,22 +908,21 @@ ul.features {
     left: 50%;
     background-color: var(--background-color-first);
 
+
     transform: translate(-50%, -50%) scale(1);
+    
+    
     transition: transform 250ms var(--transition-timing-function);
-    
-
-
-    
 }
 
 .backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0.5);
-    transition: transform 250ms var(--transition-timing-function);
+   
 }
-
  
     .close-button{
         position: absolute;
+
         top: 8px;
         right: 8px;
         width: 30px;
@@ -925,17 +935,17 @@ ul.features {
         align-items: center;
         cursor: pointer;
         
-        
      }
 
     .icon-close{
         position: absolute;
+
         width: 18px;
         height: 18px;
         fill: var(--color-logo-second);
         top: 50%;
         left: 50%;
+
         transform: translate(-50%, -50%);
      
     }
-
