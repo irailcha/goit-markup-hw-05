@@ -118,7 +118,7 @@ img {
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
-    
+
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: var(--transition-timing-function);
@@ -127,6 +127,7 @@ img {
 .link:hover,
 .link:focus {
     color: var(--color-brand);
+    
 }
 
 .site-nav {
@@ -150,7 +151,7 @@ img {
     position: relative;
 }
 
-.link::after{
+.link.accent::after{
     position: absolute;
 
     content: '';
@@ -160,19 +161,11 @@ img {
     border-radius: 2px;
     left: 0;
     bottom: 0;
-
-    opacity: 0;
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: var(--transition-timing-function);
-}
-
-.link:hover::after{
     opacity: 1;
 }
-.link:focus::after{
-    opacity: 1;
-    }
+
+
+
 
 
 
@@ -391,7 +384,9 @@ ul.features {
 
 
 .label-box{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     position: absolute;
 
     bottom: 0;
@@ -413,7 +408,7 @@ ul.features {
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-top: 27px;
+    
 }
 
 /*секція section-team Наша команда*/
@@ -713,8 +708,8 @@ ul.features {
 
 /*H1 */
 
-.visually-hidden {position: absolute;
-
+.visually-hidden {
+    position: absolute;
     color: rgba(0, 0, 0, 0);
     width: 1px;
     height: 1px;
@@ -845,13 +840,18 @@ ul.features {
 }
 
 
-.project-overlay{
+.flex-element{
     position: relative;
+    
+}
 
+.project-thumb{
+    position: relative;
     overflow: hidden;
 }
-.project-overlay::before{
-    display: inline-block;
+
+.project-thumb::before{
+    display: block;
     position: absolute;
 
     content:'';
@@ -865,13 +865,34 @@ ul.features {
 
     
 }
-.project-overlay:hover::before{
+.project-thumb:hover::before{
     background-color: rgba(33, 150, 243, 0.9);
     
 }
 
-.flex-element:hover .project-overlay::before {
+.flex-element:hover .project-thumb::before {
     transform: translateY(0);
+}
+
+
+.project-overlay{
+    display: inline-block;
+    position: absolute;
+    color:rgba(255, 255, 255, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+    width: 322px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.project-thumb:hover .project-overlay{
+    opacity: 1;
 }
 
 
@@ -896,6 +917,7 @@ ul.features {
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .modal{
@@ -910,13 +932,16 @@ ul.features {
 
 
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
     
-    
-    transition: transform 250ms var(--transition-timing-function);
+    transition: opacity 250ms var(--transition-timing-function);
 }
 
 .backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0.5);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
    
 }
  
